@@ -1,0 +1,10 @@
+.main {
+    background-color: var(--lightPurple);
+    height: 100lvh;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

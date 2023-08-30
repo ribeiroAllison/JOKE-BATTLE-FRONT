@@ -7,7 +7,7 @@ export class JokeApi{
             const { data } = await jokeConnection.get('/v1/dadjokes?limit=2')
             return data;
         } catch (error){
-            console.log(error)
+            return error.response;
         }
     }
 }

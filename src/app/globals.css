@@ -1,12 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 
 :root{
-  --black30: #303030
+  --darkBlue: #0C134F;
+  --darkBlue50: #0c134faf;
+  --mediumBlue: #1D267D;
+  --purple: #5C469C;
+  --purple50: #5c469c77;
+  --lightPurple: #D4ADFC;
+  --pink: #ffb7b787;
+  --green: #96c29196;
 }
 
 
 * {
-  color: var(--black30);
+  color: var(--darkBlue);
   margin: 0;
   padding: 0;
   box-sizing: border-box;

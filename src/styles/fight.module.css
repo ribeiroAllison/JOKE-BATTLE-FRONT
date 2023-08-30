@@ -1,0 +1,40 @@
+.gladiator{
+    background-color: var(--darkBlue);
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    margin: auto;
+    box-shadow: 0 0 5px 5px var(--purple);
+    border: 3px solid var(--lightPurple);
+}
+
+.chooseCtr{
+    display: flex;
+    align-items: center;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.main svg:hover{
+    opacity: 0.50;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#leftHover{
+    background-color: var(--green);
+    border: 3px solid var(--darkBlue);
+    transition: 0.3s ease;
+}
+
+#rightHover{
+    background-color: var(--pink);
+    border: 3px solid var(--darkBlue);
+    transition: 0.3s ease;
+}
+
