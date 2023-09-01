@@ -40,9 +40,9 @@ export default function FightButton(props) {
 
         try{
             await Dads.updateDadScore(name);
-            await JokeBook.addNewJoke(joke)
             await JokeBook.updateJokeScore(joke);
-
+            await JokeBook.addNewJoke(joke)
+            
         } catch(error){
             console.log(error);
             notifyFailure('Could not send vote, please try again')

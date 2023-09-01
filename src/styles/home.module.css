@@ -1,6 +1,7 @@
 .main {
     background-color: var(--lightPurple);
     padding-bottom: 3rem;
+    min-height: 100lvh;
 }
 
 .header{
