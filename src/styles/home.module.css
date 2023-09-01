@@ -1,10 +1,21 @@
 .main {
     background-color: var(--lightPurple);
-    height: 100lvh;
+    padding-bottom: 3rem;
 }
 
 .header{
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    background-color: var(--darkBlue);
+    height: 5rem;
+}
+
+.header h1, .header h2{
+    color: var(--lightPurple)
+}
+
+.header h2{
+    margin-left: 1rem;
 }

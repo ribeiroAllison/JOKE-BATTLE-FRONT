@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import style from '@/styles/fight.module.css';
-import {ArrowFatLineLeft, ArrowFatLineRight } from '@phosphor-icons/react';
+import { ArrowFatLinesLeft, ArrowFatLinesRight } from '@phosphor-icons/react';
+import { Dads, JokeBook } from '@/services/ApiService';
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 
 export default function FightButton(props) {
@@ -9,6 +12,9 @@ export default function FightButton(props) {
     const [isHovered, setIsHovered] = useState(false);
     const [leftArrowHover, setLeftArrowHover] = useState(false);
     const [rightArrowHover, setRightArrowHover] = useState(false);
+
+    //------------------------------TOAST SETUP-------------------------------------
+    const notifyFailure = (msg) => toast.error(msg);
 
     //------------------------------EVENT HANDLERS------------------------------------
     const handleLeftArrowHover = () => {
@@ -30,8 +36,20 @@ export default function FightButton(props) {
         setIsHovered(false);
     };
 
-    const handleClick =() =>{
+    const handleClick = async (name, joke) =>{
+
+        try{
+            await Dads.updateDadScore(name);
+            await JokeBook.addNewJoke(joke)
+            await JokeBook.updateJokeScore(joke);
+
+        } catch(error){
+            console.log(error);
+            notifyFailure('Could not send vote, please try again')
+        }
         props.getJokes();
+        props.getDadsScores();
+        props.getTopJokes()
     }
 
     //--------------------------AUX FUNCTIONS------------------------------------
@@ -49,19 +67,20 @@ export default function FightButton(props) {
 
     return (
         <div className={style.main}>
+            <ToastContainer autoClose={3000}/>
             <h2>Choose Your Winner!</h2>
             <div 
                 className={style.chooseCtr}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
-                <ArrowFatLineLeft 
+                <ArrowFatLinesLeft 
                     size={70} 
                     weight="fill" 
                     className={style.leftArrow}
                     onMouseEnter={handleLeftArrowHover}
                     onMouseLeave={(() => {setLeftArrowHover(false)})}
-                    onClick={handleClick}
+                    onClick={() => handleClick('ted', props.joke1)}
                 />
                 <img
                     src={isHovered ? '/images/fight.gif' : 'images/fight.svg'}
@@ -71,13 +90,13 @@ export default function FightButton(props) {
                     className={style.gladiator}
                     id={defineId()}
                     />
-                <ArrowFatLineRight 
+                <ArrowFatLinesRight 
                     size={70} 
                     weight="fill" 
                     className={style.rightArrow}
                     onMouseEnter={handleRightArrowHover}
                     onMouseLeave={() =>{setRightArrowHover(false)}}
-                    onClick={handleClick}
+                    onClick={() => handleClick('steve', props.joke2)}
                 />
             </div>
         </div>

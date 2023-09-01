@@ -1,7 +1,7 @@
 "use client";
 import style from "@/styles/home.module.css"
-
 import JokeBox from '@/components/JokeBox'
+
 
 export default function Home() {
 
