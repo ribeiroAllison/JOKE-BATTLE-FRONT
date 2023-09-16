@@ -59,17 +59,17 @@ export default function JokeBox() {
         console.log(error)
     }
 }
-  const resetJokes = async () =>{
-    const jokeList = await JokeBook.getAllJokes();
-    console.log(jokeList)
+  // const resetJokes = async () =>{
+  //   const jokeList = await JokeBook.getAllJokes();
+ 
 
-    if(jokeList){
-      for (let joke of jokeList){
-        await JokeBook.deleteJoke(joke.id)
-      }
-    }
+  //   if(jokeList){
+  //     for (let joke of jokeList){
+  //       await JokeBook.deleteJoke(joke.id)
+  //     }
+  //   }
     
-  }
+  // }
 
   //-------------------------EFFECTS DECLARATIONS
 
@@ -77,7 +77,7 @@ export default function JokeBox() {
     getJokes()
     getDadsScores()
     getTopJokes()
-    resetJokes()
+    // resetJokes()
   },[])
 
   useEffect(() =>{
