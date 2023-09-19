@@ -21,11 +21,17 @@ O web app é composto de 3 componentes independentes. Estes são:
 ## Relação entre componentes:
 
 ```mermaid
-graph TD;
-    A-(solicita um par de piadas à API)->B;
-    A-(envia a piada e o "dad" vencedor ao banco de dados, cadastra nova piada ou atualiza sua pontuação) ->C;
-   
+
+graph TD
+
+A[Requisita par de piadas de ] --> B(API pública) 
+
+A -- Envia piadas e/ou update de score para -->C{Servidor Flask} 
+
+
+
 ```
+
 
 ## Tecnologias utilizadas:
 
