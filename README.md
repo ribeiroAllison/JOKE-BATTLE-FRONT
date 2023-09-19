@@ -24,7 +24,7 @@ O web app é composto de 3 componentes independentes. Estes são:
 
 graph TD
 
-B{ Front-End } -- Requisita um par de piadas --> A(API pública) 
+A{Front-End } -- Requisita um par de piadas --> B(API pública) 
 
 A -- Envia piadas e/ou update de score para -->C(Servidor Flask)
 
