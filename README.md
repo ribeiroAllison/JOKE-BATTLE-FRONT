@@ -32,6 +32,19 @@ A -- Envia piadas e/ou update de score para -->C(Servidor Flask)
 
 ```
 
+## Como instalar:
+Inicie o servidor seguindo os passos descritos aqui: https://github.com/ribeiroAllison/MVP3-PUC-BACK
+
+Clone o repositório, no terminal execute o comando 
+```
+    npm install
+```
+
+Após a instalação execute no terminal:
+```
+    npm run dev
+```
+
 
 ## Tecnologias utilizadas:
 
